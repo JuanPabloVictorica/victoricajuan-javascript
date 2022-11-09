@@ -24,3 +24,12 @@ let stockProductos = [
     {id: 23, nombre: "Anillo 5", tipo: "anillo", cantidad: 1, desc: "Una anillo que re va con vos", precio: 1700, talle: "3", img: './img/anillo.jpg'},
     {id: 24, nombre: "Anillo 6", tipo: "anillo", cantidad: 1, desc: "Una anillo que re va con vos", precio: 800, talle: "3", img: './img/anillo.jpg'},
 ]
+
+Swal.fire({
+    title: 'Bienvenidos!',
+    text: '',
+    imageUrl: 'https://unsplash.it/400/200',
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: 'Custom image',
+  })
