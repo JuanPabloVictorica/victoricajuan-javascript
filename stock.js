@@ -1,12 +1,12 @@
 let stockProductos = [
-    {id: 1, nombre: "Aritos 1", tipo: "aritos", cantidad: 1, desc: "Un arito que re va con vos", precio: 1200, talle: "1", img: './img/aritos.jpg'},
-    {id: 2, nombre: "Aritos 2", tipo: "aritos", cantidad: 1, desc: "Un arito que re va con vos", precio: 1100, talle: "1", img: './img/aritos.jpg'},
-    {id: 3, nombre: "Aritos 3", tipo: "aritos", cantidad: 1, desc: "Un arito que re va con vos", precio: 1200, talle: "2", img: './img/aritos.jpg'},
-    {id: 4, nombre: "Aritos 4", tipo: "aritos", cantidad: 1, desc: "Un arito que re va con vos", precio: 1400, talle: "2", img: './img/aritos.jpg'},
-    {id: 5, nombre: "Aritos 5", tipo: "aritos", cantidad: 1, desc: "Un arito que re va con vos", precio: 1200, talle: "3", img: './img/aritos.jpg'},
-    {id: 6, nombre: "Aritos 6", tipo: "aritos", cantidad: 1, desc: "Un arito que re va con vos", precio: 1500, talle: "3", img: './img/aritos.jpg'},
+    {id: 1, nombre: "Aritos 1", tipo: "aritos", cantidad: 1, desc: "Un arito que re va con vos", precio: 8, talle: "1", img: './img/aritos.jpg'},
+    {id: 2, nombre: "Aritos 2", tipo: "aritos", cantidad: 1, desc: "Un arito que re va con vos", precio: 10, talle: "1", img: './img/aritos.jpg'},
+    {id: 3, nombre: "Aritos 3", tipo: "aritos", cantidad: 1, desc: "Un arito que re va con vos", precio: 20, talle: "2", img: './img/aritos.jpg'},
+    {id: 4, nombre: "Aritos 4", tipo: "aritos", cantidad: 1, desc: "Un arito que re va con vos", precio: 25, talle: "2", img: './img/aritos.jpg'},
+    {id: 5, nombre: "Aritos 5", tipo: "aritos", cantidad: 1, desc: "Un arito que re va con vos", precio: 14, talle: "3", img: './img/aritos.jpg'},
+    {id: 6, nombre: "Aritos 6", tipo: "aritos", cantidad: 1, desc: "Un arito que re va con vos", precio: 12, talle: "3", img: './img/aritos.jpg'},
     {id: 7, nombre: "Pulsera 1", tipo: "pulsera", cantidad: 1, desc: "Una pulsera que re va con vos", precio: 500, talle: "1", img: './img/pulsera.jpg'},
-    {id: 8, nombre: "Pulsera 2", tipo: "pulsera", cantidad: 1, desc: "Una pulsera que re va con vos", precio: 500, talle: "1", img: './img/pulsera.jpg'},
+    {id: 8, nombre: "Pulsera 2", tipo: "pulsera", cantidad: 1, desc: "Una pulsera que re va con vos", precio: 30, talle: "1", img: './img/pulsera.jpg'},
     {id: 9, nombre: "Pulsera 3", tipo: "pulsera", cantidad: 1, desc: "Una pulsera que re va con vos", precio: 500, talle: "2", img: './img/pulsera.jpg'},
     {id: 10, nombre: "Pulsera 4", tipo: "pulsera", cantidad: 1, desc: "Una pulsera que re va con vos", precio: 700, talle: "2", img: './img/pulsera.jpg'},
     {id: 11, nombre: "Pulsera 5", tipo: "pulsera", cantidad: 1,desc: "Una pulsera que re va con vos", precio: 700, talle: "3", img: './img/pulsera.jpg'},
@@ -25,6 +25,17 @@ let stockProductos = [
     {id: 24, nombre: "Anillo 6", tipo: "anillo", cantidad: 1, desc: "Una anillo que re va con vos", precio: 800, talle: "3", img: './img/anillo.jpg'},
 ]
 
+
+const getDolarBlue = async () => {
+    return async () => {
+        const rs = await fetch("https://api-dolar-argentina.herokuapp.com/api/dolarblue", {
+            mode: 'no-cors'
+        });
+        const data = await rs.json();
+        console.log(data);
+    }
+}
+
 Swal.fire({
     title: 'Bienvenidos!',
     text: '',
@@ -33,3 +44,5 @@ Swal.fire({
     imageHeight: 200,
     imageAlt: 'Custom image',
   })
+
+export {stockProductos, getDolarBlue}
